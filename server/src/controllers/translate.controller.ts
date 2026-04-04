@@ -80,6 +80,7 @@ export const deleteTranslation = async (req: Request, res: Response) => {
 
     res.json({ message: 'Translation deleted' });
   } catch (error) {
-    res.status(500).json({ message: 'Server error' });
+   console.error('Delete error:', error);
+  res.status(500).json({ message: 'Server error' });
   }
 };
