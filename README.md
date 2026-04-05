@@ -179,24 +179,6 @@ Save to PostgreSQL (NeonDB) → return to frontend
     ↓
 Redux state update → ResultCard components render
 ```
-
-### AI Prompt Design
-
-The core of the app is the prompt engineering. Each translation returns:
-
-```json
-[
-  {
-    "original": "strategic workforce optimization",
-    "translation": "we are firing people",
-    "red_flag": true,
-    "severity": "alarm"
-  }
-]
-```
-
-The AI is instructed to be sharp, honest, and occasionally witty — but always grounded in truth.
-
 ---
 
 ## Getting Started
@@ -304,72 +286,6 @@ http://localhost:5173
 
 ---
 
-## API Reference
-
-### Auth Routes
-
-| Method | Route | Auth | Description |
-|---|---|---|---|
-| POST | `/auth/register` | ❌ | Register with email & password |
-| POST | `/auth/login` | ❌ | Login with email & password |
-| GET | `/auth/google` | ❌ | Initiate Google OAuth |
-| GET | `/auth/google/callback` | ❌ | Google OAuth callback |
-| GET | `/auth/me` | ✅ | Get current user |
-
-### Translation Routes
-
-| Method | Route | Auth | Description |
-|---|---|---|---|
-| POST | `/translate/` | ✅ | Translate text |
-| GET | `/translate/history` | ✅ | Get user's translation history |
-| DELETE | `/translate/:id` | ✅ | Delete a translation |
-
-### Request Examples
-
-**Register:**
-```json
-POST /auth/register
-{
-  "name": "Abdullah Shaikh",
-  "email": "abdullah@example.com",
-  "password": "securepass123"
-}
-```
-
-**Translate:**
-```json
-POST /translate/
-Headers: Authorization: Bearer <token>
-
-{
-  "text": "We are pursuing strategic workforce optimization.",
-  "mode": "corporate"
-}
-```
-
-**Response:**
-```json
-{
-  "message": "Translation successful!",
-  "translation": {
-    "id": 1,
-    "mode": "corporate",
-    "input_text": "We are pursuing strategic workforce optimization.",
-    "output_json": [
-      {
-        "original": "We are pursuing strategic workforce optimization.",
-        "translation": "We are laying people off to cut costs.",
-        "red_flag": true,
-        "severity": "alarm"
-      }
-    ],
-    "created_at": "2025-04-04T11:46:32.554Z"
-  }
-}
-```
-
----
-
 ## Decode Modes
 
 | Mode | What it decodes |
@@ -415,50 +331,18 @@ Jargon Translator gives people the power to see through professional language in
 - JWT tokens expire in **7 days**
 - Rate limiting — **10 translations per 15 minutes**
 - Rate limiting — **5 login attempts per 15 minutes**
-- Authorization checks on all delete operations
-- CORS restricted to frontend domain only
 - Environment variables for all secrets
-
----
-
-## Deployment
-
-### Backend → Render
-
-1. Push code to GitHub
-2. Create new Web Service on Render
-3. Connect GitHub repo → select `server/` as root directory
-4. Build command: `npm install && npx prisma generate && npm run build`
-5. Start command: `npm start`
-6. Add all environment variables in Render dashboard
-
-### Frontend → Vercel
-
-1. Create new project on Vercel
-2. Connect GitHub repo → select `client/` as root directory
-3. Add environment variable: `VITE_API_URL=https://your-render-url.onrender.com`
-4. Deploy
-
-### Post-deployment
-
-Update these values:
-- `CLIENT_URL` in Render env → your Vercel URL
-- Google OAuth redirect URI → `https://your-render-url.onrender.com/auth/google/callback`
 
 ---
 
 ## Author
 
 **Abdullah Shaikh**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: 2k23-swe-18@usindh.edu.pk
+- GitHub: [abdullahshaik697](https://github.com/abdullahshaik697)
+- Email: abdullahshaik55555@gmail.com
 
 ---
 
 ## License
 
 MIT License — do whatever you want with it.
-
----
-
-*Built with frustration, caffeine, and a deep hatred for corporate speak.*

@@ -253,7 +253,7 @@ function Login() {
               <input
                 type="email" name="email"
                 value={form.email} onChange={handleChange}
-                placeholder="you@example.com"
+                placeholder="abc@example.com"
                 required
                 style={{
                   width: '100%', padding: '10px 14px',

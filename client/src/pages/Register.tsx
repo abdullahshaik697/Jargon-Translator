@@ -226,8 +226,8 @@ function Register() {
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
 
             {[
-              { name: 'name', label: 'Full Name', type: 'text', placeholder: 'Abdullah Shaikh' },
-              { name: 'email', label: 'Email', type: 'email', placeholder: 'you@example.com' },
+              { name: 'name', label: 'Full Name', type: 'text', placeholder: 'Your NAme' },
+              { name: 'email', label: 'Email', type: 'email', placeholder: 'abc@example.com' },
             ].map((field) => (
               <div key={field.name}>
                 <label style={{
