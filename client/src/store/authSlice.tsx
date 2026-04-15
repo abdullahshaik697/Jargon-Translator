@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import type { AuthState, User } from '../types/index';
+import type { AuthState } from '../types/index';
 import api from '../services/api';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
