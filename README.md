@@ -20,7 +20,7 @@ Paste any piece of professional text — our AI breaks it down sentence by sente
 
 ## Live Demo
 
-> Coming soon after deployment
+https://jargon-translator-seven.vercel.app
 
 ---
 
