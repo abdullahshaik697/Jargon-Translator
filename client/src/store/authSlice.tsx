@@ -61,6 +61,7 @@ const authSlice = createSlice({
       state.error = null;
       localStorage.removeItem('token');
     },
+    
     setTokenFromGoogle: (state, action: PayloadAction<string>) => {
       state.token = action.payload;
       state.isAuthenticated = true;
